@@ -1,0 +1,13 @@
+POST http://localhost:3003/api/notes
+Content-Type: application/json
+Authorization: Bearer JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2ZhYzc4OWMyMDI4ODI3OTYxNmJhOSIsInVzZXJuYW1lIjoiYWxlamFuZHJvdXJheSIsImlhdCI6MTY0ODM0NzgzNn0.RfR8z414F2-GbUf-HfBpgwII2tQZSWZ-i2_vi9Ll89k
+
+{
+  "content": "This is a new note important",
+  "important": true
+}
+
+###
+
+POST http://localhost:3003/api/notes
+Content-Type: application/json
