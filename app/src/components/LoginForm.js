@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import Togglable from './Togglable.js'
-import loginService from '../services/login'
-import noteService from '../services/notes'
-import Notification from './Notification'
+import React, { useState } from 'react';
+import Togglable from './Togglable.js';
+import loginService from '../services/login';
+import noteService from '../services/notes';
+import Notification from './Notification';
 
 export default function LoginForm ({ handleChangeUser }) {
   const [username, setUsername] = useState('');
@@ -11,29 +11,29 @@ export default function LoginForm ({ handleChangeUser }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     try {
       const user = await loginService.login({
         username,
         password
       });
-  
+
       window.localStorage.setItem(
         'loggedNoteAppUser', JSON.stringify(user)
-      )
-  
-      noteService.setToken(user.token)
-  
+      );
+
+      noteService.setToken(user.token);
+
       handleChangeUser(user);
-      setUsername('')
-      setPassword('')
-    } catch(e) {
-      setErrorMessage('Wrong credentials')
+      setUsername('');
+      setPassword('');
+    } catch (e) {
+      setErrorMessage('Wrong credentials');
       setTimeout(() => {
-        setErrorMessage(null)
-      }, 5000)
+        setErrorMessage(null);
+      }, 5000);
     }
-  }
+  };
 
   return (
     <Togglable buttonLabel='Show Login'>
@@ -62,5 +62,5 @@ export default function LoginForm ({ handleChangeUser }) {
         </button>
       </form>
     </Togglable>
-  )
+  );
 }

@@ -4,7 +4,7 @@ const Note = require('../models/Note');
 const User = require('../models/User');
 const { api, initialNotes, userTest, getAllContentsFromNotes } = require('./helpers');
 
-let userToken; 
+let userToken;
 
 describe('notes tests', () => {
   beforeEach(async () => {
@@ -18,7 +18,7 @@ describe('notes tests', () => {
     const user = await api
       .post('/api/login')
       .send({
-        username: "aleroot",
+        username: 'aleroot',
         password: 'twitch'
       });
 

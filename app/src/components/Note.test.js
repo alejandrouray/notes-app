@@ -7,7 +7,7 @@ test('renders content', () => {
   const note = {
     content: 'This is a test',
     important: true
-  }
+  };
 
   const component = render(<Note note={note} />);
 
@@ -19,7 +19,7 @@ test('clicking the button calls event handler once', () => {
   const note = {
     content: 'This is a test',
     important: true
-  }
+  };
 
   const mockHandler = jest.fn();
 

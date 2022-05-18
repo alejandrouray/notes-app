@@ -44,7 +44,7 @@ describe('creating a new user', () => {
       username: 'aleroot',
       name: 'Miguel',
       password: 'twitch'
-    }; 
+    };
 
     const result = await api
       .post('/api/users')

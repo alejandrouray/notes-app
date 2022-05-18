@@ -2,7 +2,6 @@ const notesRouter = require('express').Router();
 const Note = require('../models/Note');
 const User = require('../models/User');
 const userExtractor = require('../middlewares/userExtractor');
-const Mongoose = require('mongoose');
 
 notesRouter.get('/', async (req, res) => {
   const notes = await Note.find({}).populate('user', {

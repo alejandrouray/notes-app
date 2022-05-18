@@ -1,26 +1,26 @@
-import React, {useRef, useState} from 'react'
-import Togglable from './Togglable.js'
+import React, { useRef, useState } from 'react';
+import Togglable from './Togglable.js';
 
-export default function NoteForm ({addNote, handleLogout}) {
-  const [newNote, setNewNote] = useState('')
-  const togglableRef = useRef()
+export default function NoteForm ({ addNote, handleLogout }) {
+  const [newNote, setNewNote] = useState('');
+  const togglableRef = useRef();
 
   const handleChange = (event) => {
-    setNewNote(event.target.value)
-  }
+    setNewNote(event.target.value);
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     const noteObject = {
       content: newNote,
       important: false
-    }
+    };
 
-    addNote(noteObject)
-    setNewNote('')
-    togglableRef.current.toggleVisibility()
-  }
+    addNote(noteObject);
+    setNewNote('');
+    togglableRef.current.toggleVisibility();
+  };
 
   return (
     <Togglable buttonLabel='Show Create Note' ref={togglableRef}>
@@ -32,7 +32,7 @@ export default function NoteForm ({addNote, handleLogout}) {
           value={newNote}
           onChange={handleChange}
         />
-        <button type="submit">save</button>
+        <button type='submit'>save</button>
       </form>
       <div>
         <button onClick={handleLogout}>
@@ -40,5 +40,5 @@ export default function NoteForm ({addNote, handleLogout}) {
         </button>
       </div>
     </Togglable>
-  )
+  );
 }
