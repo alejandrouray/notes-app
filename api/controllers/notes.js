@@ -4,6 +4,7 @@ const User = require('../models/User');
 const userExtractor = require('../middlewares/userExtractor');
 
 notesRouter.get('/', async (req, res) => {
+  console.log(new Date());
   const notes = await Note.find({}).populate('user', {
     username: 1,
     name: 1
