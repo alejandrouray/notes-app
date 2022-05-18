@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./mongo.js');
 
 const express = require('express');
 const cors = require('cors');
@@ -10,8 +11,6 @@ const usersRouter = require('./controllers/users');
 const loginRouter = require('./controllers/login');
 const Sentry = require('@sentry/node');
 const Tracing = require('@sentry/tracing');
-
-require('./mongo.js');
 
 const PORT = process.env.PORT;
 const app = express();
