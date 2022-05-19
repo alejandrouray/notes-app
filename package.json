@@ -6,9 +6,6 @@
     "api",
     "app"
   ],
-  "engines": {
-    "npm": "7.9.0"
-  },
   "main": "index.js",
   "scripts": {
     "build": "SKIP_PREFLIGHT_CHECK=true npm run build --workspace=app",
